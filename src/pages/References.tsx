@@ -1,42 +1,45 @@
-import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useLanguage } from "@/contexts/LanguageContext";
 import clientsBau from "@/assets/clients-bauunternehmen.png";
 import clientsDienst from "@/assets/clients-dienstleistungen.png";
 import clientsGastro from "@/assets/clients-gastronomie.png";
 import clientsFreizeit from "@/assets/clients-freizeit.png";
+import { Link } from "react-router-dom";
 
 const References = () => {
+  const { t } = useLanguage();
+
   const categories = [
     {
       id: "all",
-      title: "Alle",
-      description: "Alle unsere glücklichen Kunden",
+      title: t.clients.categories.all,
+      description: t.clients.subtitle,
     },
     {
       id: "bauunternehmen",
-      title: "Bauunternehmen",
-      description: "Unsere Kunden aus der Baubranche",
+      title: t.clients.categories.construction,
+      description: t.clients.subtitle,
       image: clientsBau,
     },
     {
       id: "dienstleistungen",
-      title: "Dienstleistungen",
-      description: "Kunden aus dem Dienstleistungssektor",
+      title: t.clients.categories.services,
+      description: t.clients.subtitle,
       image: clientsDienst,
     },
     {
       id: "gastronomie",
-      title: "Gastronomie",
-      description: "Partner aus der Gastronomie",
+      title: t.clients.categories.gastronomy,
+      description: t.clients.subtitle,
       image: clientsGastro,
     },
     {
       id: "freizeitbranche",
-      title: "Freizeitbranche",
-      description: "Kunden aus der Freizeitbranche",
+      title: t.clients.categories.leisure,
+      description: t.clients.subtitle,
       image: clientsFreizeit,
     },
   ];
@@ -49,9 +52,9 @@ const References = () => {
       <section className="pt-32 pb-16 bg-gradient-to-br from-primary to-primary/90 text-primary-foreground">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center animate-fade-in">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">Referenzen</h1>
+            <h1 className="text-5xl md:text-6xl font-bold mb-6">{t.clients.title}</h1>
             <p className="text-xl md:text-2xl opacity-90">
-              Unsere glücklichen Kunden sind der Beweis hierfür
+              {t.clients.subtitle}
             </p>
           </div>
         </div>
@@ -129,19 +132,19 @@ const References = () => {
             <Card className="text-center">
               <CardContent className="p-8">
                 <div className="text-4xl font-bold text-accent mb-2">100+</div>
-                <p className="text-muted-foreground">Zufriedene Kunden</p>
+                <p className="text-muted-foreground">{t.stats.satisfaction}</p>
               </CardContent>
             </Card>
             <Card className="text-center">
               <CardContent className="p-8">
                 <div className="text-4xl font-bold text-accent mb-2">6</div>
-                <p className="text-muted-foreground">Leistungsbereiche</p>
+                <p className="text-muted-foreground">{t.stats.locations}</p>
               </CardContent>
             </Card>
             <Card className="text-center">
               <CardContent className="p-8">
                 <div className="text-4xl font-bold text-accent mb-2">15+</div>
-                <p className="text-muted-foreground">Jahre Erfahrung</p>
+                <p className="text-muted-foreground">{t.stats.experience}</p>
               </CardContent>
             </Card>
           </div>
@@ -153,24 +156,24 @@ const References = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Werden Sie Teil unserer Erfolgsgeschichte
+              {t.cta.ready}
             </h2>
             <p className="text-xl mb-8 opacity-90">
-              Lassen Sie uns gemeinsam Ihre Marke zum Strahlen bringen
+              {t.cta.description}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="/contact"
+              <Link
+                to="/contact"
                 className="inline-flex items-center justify-center rounded-md text-lg font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-accent text-accent-foreground hover:bg-accent/90 h-12 px-8"
               >
-                Beratung anfragen
-              </a>
-              <a
-                href="/services"
+                {t.nav.consultation}
+              </Link>
+              <Link
+                to="/services"
                 className="inline-flex items-center justify-center rounded-md text-lg font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border-2 border-primary-foreground bg-transparent text-primary-foreground hover:bg-primary-foreground hover:text-primary h-12 px-8"
               >
-                Unsere Leistungen
-              </a>
+                {t.nav.services}
+              </Link>
             </div>
           </div>
         </div>

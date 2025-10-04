@@ -1,0 +1,117 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Leistungen",
+    "references": "Referenzen",
+    "contact": "Kontakt",
+    "consultation": "Beratung anfragen"
+  },
+  "hero": {
+    "title": "Ihre maßgeschneiderte Lösung für Marketing & Werbung",
+    "subtitle": "Design • Folierung • Digital • Schilder • Druck • Stick",
+    "description": "Vom ersten Entwurf bis zur finalen Umsetzung – wir sind Ihr Partner für kreative Lösungen, die begeistern und Ihre Marke zum Strahlen bringen.",
+    "cta1": "Unsere Leistungen",
+    "cta2": "Kontakt aufnehmen",
+    "scroll": "Mehr erfahren"
+  },
+  "services": {
+    "title": "Unsere Leistungen",
+    "subtitle": "Alles aus einer Hand",
+    "learnMore": "Mehr erfahren",
+    "design": {
+      "title": "Design",
+      "description": "Professionelles Grafikdesign für Ihre Marke",
+      "quote": "Kreativität trifft Professionalität",
+      "details": "Von der ersten Idee bis zum fertigen Design - wir gestalten Ihre visuelle Identität."
+    },
+    "wrapping": {
+      "title": "Folierung",
+      "description": "Fahrzeugfolierung und Werbetechnik",
+      "quote": "Ihr Fahrzeug als Werbefläche",
+      "details": "Professionelle Fahrzeugfolierung für maximale Aufmerksamkeit im Straßenverkehr."
+    },
+    "digital": {
+      "title": "Digital",
+      "description": "Digitale Lösungen und Online-Marketing",
+      "quote": "Digital stark aufgestellt",
+      "details": "Moderne digitale Lösungen für Ihre Online-Präsenz und Marketing-Kampagnen."
+    },
+    "signs": {
+      "title": "Schilder",
+      "description": "Werbeschilder und Beschilderungen",
+      "quote": "Sichtbar und professionell",
+      "details": "Von Leuchtreklame bis Wegweiser - wir fertigen Schilder nach Ihren Wünschen."
+    },
+    "print": {
+      "title": "Druck",
+      "description": "Hochwertige Druckerzeugnisse",
+      "quote": "Qualität die überzeugt",
+      "details": "Professioneller Druck für alle Ihre Werbematerialien und Geschäftsunterlagen."
+    },
+    "embroidery": {
+      "title": "Stick",
+      "description": "Textilveredelung und Bestickung",
+      "quote": "Ihr Logo auf Textilien",
+      "details": "Hochwertige Bestickung für Arbeitskleidung, Vereinstrikots und Merchandising."
+    }
+  },
+  "about": {
+    "title": "Über Zum Kreativ",
+    "description": "Seit Jahren sind wir Ihr verlässlicher Partner für kreative Werbelösungen in Groß-Zimmern und Umgebung. Unser erfahrenes Team verbindet traditionelle Handwerkskunst mit modernster Technologie, um Ihnen maßgeschneiderte Lösungen zu bieten, die Ihre Marke perfekt in Szene setzen."
+  },
+  "clients": {
+    "title": "Referenzen",
+    "subtitle": "Unsere glücklichen Kunden",
+    "categories": {
+      "all": "Alle",
+      "construction": "Bauunternehmen",
+      "gastronomy": "Gastronomie",
+      "services": "Dienstleistungen",
+      "leisure": "Freizeit"
+    }
+  },
+  "stats": {
+    "satisfaction": "Kundenzufriedenheit",
+    "locations": "Einsatzorte",
+    "experience": "Jahre Erfahrung"
+  },
+  "contact": {
+    "title": "Kontakt",
+    "subtitle": "Nehmen Sie Kontakt mit uns auf",
+    "getInTouch": "Kontaktieren Sie uns",
+    "form": {
+      "name": "Name",
+      "email": "E-Mail",
+      "phone": "Telefon",
+      "message": "Ihre Nachricht",
+      "submit": "Nachricht senden",
+      "success": "Vielen Dank! Wir melden uns in Kürze bei Ihnen."
+    },
+    "info": {
+      "title": "Kontaktinformationen",
+      "address": "Adresse",
+      "phone": "Telefon",
+      "email": "E-Mail",
+      "hours": "Beratungszeiten"
+    },
+    "schedule": "Nach telefonischer Vereinbarung",
+    "map": "Standort",
+    "companyDetails": "Firmendetails",
+    "managingDirector": "Geschäftsführer",
+    "taxId": "Steuernummer",
+    "vatId": "USt-IdNr"
+  },
+  "cta": {
+    "ready": "Bereit für Ihr nächstes Projekt?",
+    "description": "Lassen Sie uns gemeinsam Ihre Vision verwirklichen. Kontaktieren Sie uns noch heute für ein unverbindliches Beratungsgespräch.",
+    "button": "Jetzt Kontakt aufnehmen"
+  },
+  "footer": {
+    "about": "Über uns",
+    "aboutText": "Ihre maßgeschneiderte Lösung für Marketing & Werbung in Groß-Zimmern.",
+    "quickLinks": "Quick Links",
+    "ourServices": "Unsere Leistungen",
+    "followUs": "Folgen Sie uns",
+    "rights": "Alle Rechte vorbehalten."
+  }
+}

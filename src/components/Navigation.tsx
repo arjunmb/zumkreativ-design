@@ -1,17 +1,19 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Languages } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const { language, setLanguage, t } = useLanguage();
 
   const navItems = [
-    { name: "Home", path: "/" },
-    { name: "Leistungen", path: "/services" },
-    { name: "Referenzen", path: "/references" },
-    { name: "Kontakt", path: "/contact" },
+    { name: t.nav.home, path: "/" },
+    { name: t.nav.services, path: "/services" },
+    { name: t.nav.references, path: "/references" },
+    { name: t.nav.contact, path: "/contact" },
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -40,8 +42,17 @@ const Navigation = () => {
                 )}
               </Link>
             ))}
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => setLanguage(language === "de" ? "en" : "de")}
+              className="gap-2"
+            >
+              <Languages size={18} />
+              {language === "de" ? "EN" : "DE"}
+            </Button>
             <Button asChild size="sm" className="bg-accent hover:bg-accent/90">
-              <Link to="/contact">Beratung anfragen</Link>
+              <Link to="/contact">{t.nav.consultation}</Link>
             </Button>
           </div>
 
@@ -70,9 +81,17 @@ const Navigation = () => {
                 {item.name}
               </Link>
             ))}
+            <Button
+              variant="ghost"
+              className="w-full mt-2 justify-start gap-2"
+              onClick={() => setLanguage(language === "de" ? "en" : "de")}
+            >
+              <Languages size={18} />
+              {language === "de" ? "English" : "Deutsch"}
+            </Button>
             <Button asChild className="w-full mt-2 bg-accent hover:bg-accent/90">
               <Link to="/contact" onClick={() => setIsOpen(false)}>
-                Beratung anfragen
+                {t.nav.consultation}
               </Link>
             </Button>
           </div>

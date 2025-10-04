@@ -1,0 +1,117 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "references": "References",
+    "contact": "Contact",
+    "consultation": "Request Consultation"
+  },
+  "hero": {
+    "title": "Your Custom Solution for Marketing & Advertising",
+    "subtitle": "Design • Vehicle Wrapping • Digital • Signs • Print • Embroidery",
+    "description": "From initial draft to final implementation – we are your partner for creative solutions that inspire and make your brand shine.",
+    "cta1": "Our Services",
+    "cta2": "Get in Touch",
+    "scroll": "Learn More"
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Everything from One Source",
+    "learnMore": "Learn More",
+    "design": {
+      "title": "Design",
+      "description": "Professional graphic design for your brand",
+      "quote": "Creativity meets professionalism",
+      "details": "From the first idea to the finished design - we create your visual identity."
+    },
+    "wrapping": {
+      "title": "Vehicle Wrapping",
+      "description": "Vehicle wrapping and advertising technology",
+      "quote": "Your vehicle as advertising space",
+      "details": "Professional vehicle wrapping for maximum attention on the road."
+    },
+    "digital": {
+      "title": "Digital",
+      "description": "Digital solutions and online marketing",
+      "quote": "Digitally strong positioned",
+      "details": "Modern digital solutions for your online presence and marketing campaigns."
+    },
+    "signs": {
+      "title": "Signs",
+      "description": "Advertising signs and signage",
+      "quote": "Visible and professional",
+      "details": "From illuminated signs to signposts - we manufacture signs according to your wishes."
+    },
+    "print": {
+      "title": "Print",
+      "description": "High-quality printed products",
+      "quote": "Quality that convinces",
+      "details": "Professional printing for all your advertising materials and business documents."
+    },
+    "embroidery": {
+      "title": "Embroidery",
+      "description": "Textile finishing and embroidery",
+      "quote": "Your logo on textiles",
+      "details": "High-quality embroidery for workwear, club jerseys and merchandising."
+    }
+  },
+  "about": {
+    "title": "About Zum Kreativ",
+    "description": "For years we have been your reliable partner for creative advertising solutions in Groß-Zimmern and the surrounding area. Our experienced team combines traditional craftsmanship with state-of-the-art technology to offer you customized solutions that perfectly showcase your brand."
+  },
+  "clients": {
+    "title": "References",
+    "subtitle": "Our Happy Clients",
+    "categories": {
+      "all": "All",
+      "construction": "Construction Companies",
+      "gastronomy": "Gastronomy",
+      "services": "Services",
+      "leisure": "Leisure"
+    }
+  },
+  "stats": {
+    "satisfaction": "Customer Satisfaction",
+    "locations": "Service Locations",
+    "experience": "Years of Experience"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Get in Touch with Us",
+    "getInTouch": "Contact Us",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "message": "Your Message",
+      "submit": "Send Message",
+      "success": "Thank you! We will get back to you shortly."
+    },
+    "info": {
+      "title": "Contact Information",
+      "address": "Address",
+      "phone": "Phone",
+      "email": "Email",
+      "hours": "Consultation Hours"
+    },
+    "schedule": "By phone appointment",
+    "map": "Location",
+    "companyDetails": "Company Details",
+    "managingDirector": "Managing Director",
+    "taxId": "Tax Number",
+    "vatId": "VAT ID"
+  },
+  "cta": {
+    "ready": "Ready for Your Next Project?",
+    "description": "Let's bring your vision to life together. Contact us today for a non-binding consultation.",
+    "button": "Get in Touch Now"
+  },
+  "footer": {
+    "about": "About Us",
+    "aboutText": "Your custom solution for marketing & advertising in Groß-Zimmern.",
+    "quickLinks": "Quick Links",
+    "ourServices": "Our Services",
+    "followUs": "Follow Us",
+    "rights": "All rights reserved."
+  }
+}

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Palette, Car, Globe, SignpostBig, Printer, Layers, ArrowRight, Check } from "lucide-react";
 import Navigation from "@/components/Navigation";
@@ -13,55 +12,71 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Services = () => {
-  const services = [
+  const { t, language } = useLanguage();
+
+  const servicesData = [
     {
       icon: Palette,
-      title: "Design",
-      description: "Logo, Corporate Design, Speisekarten, mehr",
-      detailed: "Sie haben eine Firma und brauchen ein gutes Logo, sodass der Ersteindruck stimmt? Oder wollen einen aussagekräftigen Flyer, damit die nötigen Informationen schön in Szene gesetzt werden? Ein Komplettdesign von Briefkopf bis Präsentationsmappe und Visitenkarte? Dann brauchen Sie uns nur noch zu kontaktieren. Wir setzen uns zusammen und gestalten ihre Wünsche in gutes Design um.",
-      items: ["Logo Design", "Corporate Design", "Speisekarten", "Flyer", "Briefkopf", "Präsentationsmappe", "Visitenkarte"],
-      quote: "Wer der Meinung ist, dass gutes Design teuer ist, sollte sich die Preise für schlechtes Design ansehen. - Dr. Ralf Speth",
+      title: t.services.design.title,
+      description: t.services.design.description,
+      detailed: t.services.design.details,
+      quote: t.services.design.quote,
+      items: language === "de" ? 
+        ["Logo Design", "Corporate Design", "Speisekarten", "Flyer", "Briefkopf", "Präsentationsmappe", "Visitenkarte"] :
+        ["Logo Design", "Corporate Design", "Menus", "Flyers", "Letterhead", "Presentation Folder", "Business Cards"]
     },
     {
       icon: Car,
-      title: "Folierung",
-      description: "Schaufenster, Auto, Lkw, Laden, mehr",
-      detailed: "Ihr Firmenwagen kann ihr fahrender Werbebotschafter werden. Sie setzen ihre Dienstleistungen professionell in Szene und können so für den ersten positiven ersten Eindruck beim Kunden sorgen. Ein Schaufenster ist mehr als nur eine Glasfläche – es ist Ihre Visitenkarte nach außen. Mit einer gelungenen Schaufensterfolierung verwandeln Sie Ihr Schaufenster in eine wirkungsvolle Werbefläche.",
-      items: ["Autofolierung", "Lkw-Folierung", "Schaufensterfolierung", "Ladenfolierung", "Steinschlagschutz", "Spiegelfolie", "Sichtschutz"],
-      special: "Wir bieten auch Lösungen für besondere Bedürfnisse und Spezialfolien.",
+      title: t.services.wrapping.title,
+      description: t.services.wrapping.description,
+      detailed: t.services.wrapping.details,
+      quote: t.services.wrapping.quote,
+      items: language === "de" ? 
+        ["Autofolierung", "Lkw-Folierung", "Schaufensterfolierung", "Ladenfolierung", "Steinschlagschutz", "Spiegelfolie", "Sichtschutz"] :
+        ["Vehicle Wrapping", "Truck Wrapping", "Window Wrapping", "Shop Wrapping", "Stone Chip Protection", "Mirror Film", "Privacy Film"]
     },
     {
       icon: Globe,
-      title: "Digital",
-      description: "Webseite, Social Media, Google, SEO, mehr",
-      detailed: "Die digitale Welt hat jede Branche erreicht und bringt viele Vorteile und auch Ansprüche mit sich. Es ist praktisch, wenn man einen Partner hat, der sich von Suchmaschinenoptimierung (Google) bis Social Media auskennt und ihnen beiseitesteht. Unsere Social Media Experten erkennen die Lücken und stellen eine auf ihr Unternehmen abgestimmte Marketingstrategie auf.",
-      items: ["Website Development", "Social Media Management", "Google Services", "SEO", "Digital Marketing Strategy", "Content Creation"],
-      slogan: "Ok Google, lass loslegen!",
+      title: t.services.digital.title,
+      description: t.services.digital.description,
+      detailed: t.services.digital.details,
+      quote: t.services.digital.quote,
+      items: language === "de" ? 
+        ["Website Development", "Social Media Management", "Google Services", "SEO", "Digital Marketing Strategy", "Content Creation"] :
+        ["Website Development", "Social Media Management", "Google Services", "SEO", "Digital Marketing Strategy", "Content Creation"]
     },
     {
       icon: SignpostBig,
-      title: "Schilder",
-      description: "Platten, Leuchtreklame, Buchstaben, 3D Logo, mehr",
-      detailed: "Bevor die Kunden in das Geschäft eintreten, soll die Außenfassade sie einladen. Ob mit Leuchtbuchstaben, Leuchtkasten, Plexischild, 3D Buchstaben oder Aluplatten - wir setzen ihr Logo, ihren Namen gekonnt in Szene. Wir beraten Sie in Umsetzbarkeit und prüfen die Gegebenheiten vor Ort.",
-      items: ["Leuchtbuchstaben", "Leuchtkasten", "Plexischild", "3D Buchstaben", "3D Logo", "Aluplatten", "Leuchtreklame"],
-      special: "Inkl. Vor-Ort-Beratung und technischem Support nach Installation",
+      title: t.services.signs.title,
+      description: t.services.signs.description,
+      detailed: t.services.signs.details,
+      quote: t.services.signs.quote,
+      items: language === "de" ? 
+        ["Leuchtbuchstaben", "Leuchtkasten", "Plexischild", "3D Buchstaben", "3D Logo", "Aluplatten", "Leuchtreklame"] :
+        ["Illuminated Letters", "Light Box", "Acrylic Signs", "3D Letters", "3D Logo", "Aluminum Panels", "Neon Signs"]
     },
     {
       icon: Printer,
-      title: "Druck",
-      description: "Visitenkarten, Flyer, Platten, Banner, Speisekarten, mehr",
-      detailed: "Klassischer Flyerdruck oder extravagante Visitenkarten - wir sorgen für den gewünschten Auftritt. Die neuen Arbeitsklamotten müssen bedruckt, bestickt oder mit Reflexfolie veredelt werden? Wir beraten Sie hinsichtlich Druckqualität, Einsatz und Alternativen.",
-      items: ["Visitenkarten", "Flyer", "Platten", "Banner", "Speisekarten", "Textilbedruckung", "Arbeitskleidung", "Reflexfolie"],
+      title: t.services.print.title,
+      description: t.services.print.description,
+      detailed: t.services.print.details,
+      quote: t.services.print.quote,
+      items: language === "de" ? 
+        ["Visitenkarten", "Flyer", "Platten", "Banner", "Speisekarten", "Textilbedruckung", "Arbeitskleidung", "Reflexfolie"] :
+        ["Business Cards", "Flyers", "Boards", "Banners", "Menus", "Textile Printing", "Workwear", "Reflective Film"]
     },
     {
       icon: Layers,
-      title: "Stick",
-      description: "Logostick auf diverse Textilien",
-      detailed: "Ihr Logo ist das Aushängeschild Ihrer Marke – warum nicht auch auf Textilien? Mit unserer hochwertigen Stickerei setzen wir Ihr Logo oder Ihre Botschaft gekonnt in Szene. Ob Arbeitskleidung, T-Shirts, Jacken, Caps oder Taschen – wir besticken diverse Textilien präzise und langlebig.",
-      items: ["Logo Embroidery", "Arbeitskleidung", "T-Shirts", "Jacken", "Caps", "Taschen"],
-      features: ["Robust und langlebig", "Farbintensiv", "Präzise Detailarbeit", "Professioneller Look"],
+      title: t.services.embroidery.title,
+      description: t.services.embroidery.description,
+      detailed: t.services.embroidery.details,
+      quote: t.services.embroidery.quote,
+      items: language === "de" ? 
+        ["Logo Stickerei", "Arbeitskleidung", "T-Shirts", "Jacken", "Caps", "Taschen"] :
+        ["Logo Embroidery", "Workwear", "T-Shirts", "Jackets", "Caps", "Bags"]
     },
   ];
 
@@ -73,9 +88,9 @@ const Services = () => {
       <section className="pt-32 pb-16 bg-gradient-to-br from-primary to-primary/90 text-primary-foreground">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center animate-fade-in">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">Unsere Leistungen</h1>
+            <h1 className="text-5xl md:text-6xl font-bold mb-6">{t.services.title}</h1>
             <p className="text-xl md:text-2xl opacity-90">
-              Vom Logo bis zur Autofolierung - Umfassende Lösungen für Ihre Marke
+              {t.services.subtitle}
             </p>
           </div>
         </div>
@@ -85,7 +100,7 @@ const Services = () => {
       <section className="py-20 bg-gradient-subtle">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
+            {servicesData.map((service, index) => (
               <Card
                 key={service.title}
                 className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-fade-in"
@@ -106,7 +121,7 @@ const Services = () => {
                   <Dialog>
                     <DialogTrigger asChild>
                       <Button variant="outline" className="w-full group/btn">
-                        Mehr erfahren
+                        {t.services.learnMore}
                         <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                       </Button>
                     </DialogTrigger>
@@ -130,14 +145,8 @@ const Services = () => {
                           </blockquote>
                         )}
                         
-                        {service.slogan && (
-                          <div className="bg-accent/10 p-4 rounded-lg">
-                            <p className="text-lg font-semibold text-accent">{service.slogan}</p>
-                          </div>
-                        )}
-                        
                         <div>
-                          <h4 className="font-semibold mb-3">Leistungen im Detail:</h4>
+                          <h4 className="font-semibold mb-3">{language === "de" ? "Leistungen im Detail:" : "Services in Detail:"}</h4>
                           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                             {service.items.map((item) => (
                               <li key={item} className="flex items-start gap-2">
@@ -148,28 +157,8 @@ const Services = () => {
                           </ul>
                         </div>
                         
-                        {service.features && (
-                          <div>
-                            <h4 className="font-semibold mb-3">Qualitätsmerkmale:</h4>
-                            <ul className="space-y-2">
-                              {service.features.map((feature) => (
-                                <li key={feature} className="flex items-start gap-2">
-                                  <Check className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
-                                  <span className="text-sm">{feature}</span>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        )}
-                        
-                        {service.special && (
-                          <div className="bg-secondary p-4 rounded-lg">
-                            <p className="text-sm font-medium">{service.special}</p>
-                          </div>
-                        )}
-                        
                         <Button asChild className="w-full bg-accent hover:bg-accent/90">
-                          <Link to="/contact">Jetzt Beratung anfragen</Link>
+                          <Link to="/contact">{t.nav.consultation}</Link>
                         </Button>
                       </div>
                     </DialogContent>
@@ -186,10 +175,10 @@ const Services = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Kostenlose & unverbindliche Beratung
+              {t.cta.ready}
             </h2>
             <p className="text-xl mb-8 opacity-90">
-              Wir beraten Sie gerne zu allen unseren Dienstleistungen
+              {t.cta.description}
             </p>
             <Button
               asChild
@@ -197,7 +186,7 @@ const Services = () => {
               className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg"
             >
               <Link to="/contact">
-                Jetzt Kontakt aufnehmen
+                {t.cta.button}
                 <ArrowRight className="ml-2" />
               </Link>
             </Button>

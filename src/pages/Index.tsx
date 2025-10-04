@@ -12,50 +12,53 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { useLanguage } from "@/contexts/LanguageContext";
 import clientsBau from "@/assets/clients-bauunternehmen.png";
 import clientsDienst from "@/assets/clients-dienstleistungen.png";
 import clientsGastro from "@/assets/clients-gastronomie.png";
 import clientsFreizeit from "@/assets/clients-freizeit.png";
 
 const Index = () => {
+  const { t } = useLanguage();
+
   const services = [
     {
       icon: Palette,
-      title: "Design",
-      description: "Logo, Corporate Design, Speisekarten, mehr",
+      title: t.services.design.title,
+      description: t.services.design.description,
     },
     {
       icon: Car,
-      title: "Folierung",
-      description: "Schaufenster, Auto, Lkw, Laden, mehr",
+      title: t.services.wrapping.title,
+      description: t.services.wrapping.description,
     },
     {
       icon: Globe,
-      title: "Digital",
-      description: "Webseite, Social Media, Google, SEO, mehr",
+      title: t.services.digital.title,
+      description: t.services.digital.description,
     },
     {
       icon: SignpostBig,
-      title: "Schilder",
-      description: "Platten, Leuchtreklame, Buchstaben, 3D Logo, mehr",
+      title: t.services.signs.title,
+      description: t.services.signs.description,
     },
     {
       icon: Printer,
-      title: "Druck",
-      description: "Visitenkarten, Flyer, Platten, Banner, Speisekarten, mehr",
+      title: t.services.print.title,
+      description: t.services.print.description,
     },
     {
       icon: Layers,
-      title: "Stick",
-      description: "Logostick auf diverse Textilien",
+      title: t.services.embroidery.title,
+      description: t.services.embroidery.description,
     },
   ];
 
   const clientImages = [
-    { src: clientsBau, alt: "Bauunternehmen Kunden", title: "Bauunternehmen" },
-    { src: clientsDienst, alt: "Dienstleistungen Kunden", title: "Dienstleistungen" },
-    { src: clientsGastro, alt: "Gastronomie Kunden", title: "Gastronomie" },
-    { src: clientsFreizeit, alt: "Freizeitbranche Kunden", title: "Freizeitbranche" },
+    { src: clientsBau, alt: t.clients.categories.construction, title: t.clients.categories.construction },
+    { src: clientsDienst, alt: t.clients.categories.services, title: t.clients.categories.services },
+    { src: clientsGastro, alt: t.clients.categories.gastronomy, title: t.clients.categories.gastronomy },
+    { src: clientsFreizeit, alt: t.clients.categories.leisure, title: t.clients.categories.leisure },
   ];
 
   return (
@@ -69,11 +72,13 @@ const Index = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center animate-fade-in">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-              Ihre maßgeschneiderte<br />
-              <span className="text-accent">Werbeagentur</span>
+              {t.hero.title}
             </h1>
-            <p className="text-xl md:text-2xl mb-8 opacity-90">
-              Vom Logo bis zur Autofolierung - Ein Ansprechpartner für alle Ihre Werbebedürfnisse
+            <p className="text-xl md:text-2xl mb-4 opacity-90">
+              {t.hero.subtitle}
+            </p>
+            <p className="text-lg mb-8 opacity-80">
+              {t.hero.description}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
@@ -82,7 +87,7 @@ const Index = () => {
                 className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg group"
               >
                 <Link to="/contact">
-                  Jetzt Beratung anfragen
+                  {t.nav.consultation}
                   <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </Button>
@@ -92,7 +97,7 @@ const Index = () => {
                 variant="outline"
                 className="bg-transparent border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary text-lg"
               >
-                <Link to="/services">Unsere Leistungen</Link>
+                <Link to="/services">{t.hero.cta1}</Link>
               </Button>
             </div>
           </div>
@@ -109,9 +114,9 @@ const Index = () => {
       <section className="py-20 bg-gradient-subtle">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-primary">Unsere Leistungen</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-primary">{t.services.title}</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Mit einem Team von Experten aus den Bereichen Grafikdesign, digitales Marketing, Folierung und Druck
+              {t.services.subtitle}
             </p>
           </div>
 
@@ -130,7 +135,7 @@ const Index = () => {
           <div className="text-center mt-12">
             <Button asChild size="lg" variant="outline" className="group">
               <Link to="/services">
-                Alle Leistungen entdecken
+                {t.hero.cta1}
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
@@ -144,21 +149,16 @@ const Index = () => {
           <div className="max-w-4xl mx-auto">
             <Card className="border-2 border-accent/20 shadow-lg">
               <CardContent className="p-8 md:p-12">
-                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary">Die Agentur</h2>
+                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary">{t.about.title}</h2>
                 <p className="text-lg mb-6 text-foreground/90 leading-relaxed">
-                  Mit einem Team von Experten aus den Bereichen Grafikdesign, digitales Marketing, Folierung und Druck 
-                  sind wir stolz darauf, Ihnen erstklassige Dienstleistungen anzubieten, die Ihre Marke voranbringen 
-                  und Ihr Unternehmen wachsen lassen.
-                </p>
-                <p className="text-lg font-semibold text-accent mb-8">
-                  Vom Logo bis Stempel über Leuchtkasten bis Autofolierung - Sie werden EINEN Ansprechpartner für ihre Werbebedürfnisse haben.
+                  {t.about.description}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button asChild size="lg" className="bg-accent hover:bg-accent/90">
-                    <Link to="/contact">Kontaktieren Sie uns</Link>
+                    <Link to="/contact">{t.hero.cta2}</Link>
                   </Button>
                   <Button asChild size="lg" variant="outline">
-                    <Link to="/references">Unsere Referenzen</Link>
+                    <Link to="/references">{t.clients.title}</Link>
                   </Button>
                 </div>
               </CardContent>
@@ -171,9 +171,9 @@ const Index = () => {
       <section className="py-20 bg-gradient-subtle">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-primary">Referenzen</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-primary">{t.clients.title}</h2>
             <p className="text-xl text-muted-foreground">
-              Unsere glücklichen Kunden sind der Beweis hierfür
+              {t.clients.subtitle}
             </p>
           </div>
 
@@ -209,7 +209,7 @@ const Index = () => {
           <div className="text-center mt-12">
             <Button asChild size="lg" variant="outline" className="group">
               <Link to="/references">
-                Alle Referenzen ansehen
+                {t.clients.title}
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
@@ -222,10 +222,10 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Bereit, Ihre Marke zum Strahlen zu bringen?
+              {t.cta.ready}
             </h2>
             <p className="text-xl mb-8 opacity-90">
-              Kontaktieren Sie uns für eine kostenlose und unverbindliche Beratung
+              {t.cta.description}
             </p>
             <Button
               asChild
@@ -233,7 +233,7 @@ const Index = () => {
               className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg"
             >
               <Link to="/contact">
-                Kostenlose Beratung anfragen
+                {t.cta.button}
                 <ArrowRight className="ml-2" />
               </Link>
             </Button>

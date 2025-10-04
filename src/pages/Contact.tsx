@@ -8,9 +8,11 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin, Clock, Facebook, Instagram } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Contact = () => {
   const { toast } = useToast();
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -21,8 +23,8 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast({
-      title: "Nachricht gesendet!",
-      description: "Wir werden uns schnellstmöglich bei Ihnen melden.",
+      title: t.contact.form.success.split('!')[0] + "!",
+      description: t.contact.form.success.split('.')[1],
     });
     setFormData({ name: "", email: "", phone: "", message: "" });
   };
@@ -42,9 +44,9 @@ const Contact = () => {
       <section className="pt-32 pb-16 bg-gradient-to-br from-primary to-primary/90 text-primary-foreground">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center animate-fade-in">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">Kontakt</h1>
+            <h1 className="text-5xl md:text-6xl font-bold mb-6">{t.contact.title}</h1>
             <p className="text-xl md:text-2xl opacity-90">
-              Wir freuen uns auf Ihre Nachricht
+              {t.contact.subtitle}
             </p>
           </div>
         </div>
@@ -57,27 +59,27 @@ const Contact = () => {
             {/* Contact Form */}
             <Card className="animate-fade-in-left">
               <CardHeader>
-                <CardTitle className="text-2xl">Nachricht senden</CardTitle>
+                <CardTitle className="text-2xl">{t.contact.getInTouch}</CardTitle>
                 <CardDescription>
-                  Füllen Sie das Formular aus und wir melden uns bei Ihnen
+                  {t.contact.subtitle}
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="space-y-2">
-                    <Label htmlFor="name">Name *</Label>
+                    <Label htmlFor="name">{t.contact.form.name} *</Label>
                     <Input
                       id="name"
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      placeholder="Ihr Name"
+                      placeholder={t.contact.form.name}
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="email">E-Mail *</Label>
+                    <Label htmlFor="email">{t.contact.form.email} *</Label>
                     <Input
                       id="email"
                       name="email"
@@ -85,12 +87,12 @@ const Contact = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      placeholder="ihre@email.de"
+                      placeholder={t.contact.form.email}
                     />
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="phone">Telefon</Label>
+                    <Label htmlFor="phone">{t.contact.form.phone}</Label>
                     <Input
                       id="phone"
                       name="phone"
@@ -102,20 +104,20 @@ const Contact = () => {
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="message">Nachricht *</Label>
+                    <Label htmlFor="message">{t.contact.form.message} *</Label>
                     <Textarea
                       id="message"
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
                       required
-                      placeholder="Beschreiben Sie Ihr Anliegen..."
+                      placeholder={t.contact.form.message}
                       rows={6}
                     />
                   </div>
 
                   <Button type="submit" className="w-full bg-accent hover:bg-accent/90" size="lg">
-                    Nachricht senden
+                    {t.contact.form.submit}
                   </Button>
                 </form>
               </CardContent>
@@ -125,9 +127,9 @@ const Contact = () => {
             <div className="space-y-6 animate-fade-in">
               <Card>
                 <CardHeader>
-                  <CardTitle className="text-2xl">Kontaktinformationen</CardTitle>
+                  <CardTitle className="text-2xl">{t.contact.info.title}</CardTitle>
                   <CardDescription>
-                    Erreichen Sie uns über folgende Kanäle
+                    {t.contact.subtitle}
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-6">
@@ -136,7 +138,7 @@ const Contact = () => {
                       <MapPin className="text-accent" size={24} />
                     </div>
                     <div>
-                      <h3 className="font-semibold mb-1">Adresse</h3>
+                      <h3 className="font-semibold mb-1">{t.contact.info.address}</h3>
                       <p className="text-muted-foreground">
                         Bertha-von-Suttner-Str. 5<br />
                         64846 Groß-Zimmern<br />
@@ -150,7 +152,7 @@ const Contact = () => {
                       <Phone className="text-accent" size={24} />
                     </div>
                     <div>
-                      <h3 className="font-semibold mb-1">Telefon</h3>
+                      <h3 className="font-semibold mb-1">{t.contact.info.phone}</h3>
                       <a
                         href="tel:+491637606161"
                         className="text-muted-foreground hover:text-accent transition-colors"
@@ -165,7 +167,7 @@ const Contact = () => {
                       <Mail className="text-accent" size={24} />
                     </div>
                     <div>
-                      <h3 className="font-semibold mb-1">E-Mail</h3>
+                      <h3 className="font-semibold mb-1">{t.contact.info.email}</h3>
                       <a
                         href="mailto:info@zumkreativ.de"
                         className="text-muted-foreground hover:text-accent transition-colors"
@@ -180,10 +182,9 @@ const Contact = () => {
                       <Clock className="text-accent" size={24} />
                     </div>
                     <div>
-                      <h3 className="font-semibold mb-1">Beratung</h3>
+                      <h3 className="font-semibold mb-1">{t.contact.info.hours}</h3>
                       <p className="text-muted-foreground">
-                        Kostenlose & unverbindliche Beratung<br />
-                        nach Terminvereinbarung
+                        {t.contact.schedule}
                       </p>
                     </div>
                   </div>
@@ -192,7 +193,7 @@ const Contact = () => {
 
               <Card>
                 <CardContent className="p-6">
-                  <h3 className="font-semibold mb-4">Folgen Sie uns</h3>
+                  <h3 className="font-semibold mb-4">{t.footer.followUs}</h3>
                   <div className="flex gap-4">
                     <a
                       href="#"
@@ -214,11 +215,11 @@ const Contact = () => {
 
               <Card>
                 <CardContent className="p-6">
-                  <h3 className="font-semibold mb-2">Geschäftsführer</h3>
+                  <h3 className="font-semibold mb-2">{t.contact.managingDirector}</h3>
                   <p className="text-muted-foreground mb-4">Dr. Adem Yıldırım</p>
                   <div className="text-sm text-muted-foreground space-y-1">
-                    <p>USt-ID: DE3266 87470</p>
-                    <p>St-Nr: 008 884 30269</p>
+                    <p>{t.contact.vatId}: DE3266 87470</p>
+                    <p>{t.contact.taxId}: 008 884 30269</p>
                   </div>
                 </CardContent>
               </Card>
@@ -234,7 +235,7 @@ const Contact = () => {
             <div className="aspect-video bg-muted flex items-center justify-center">
               <div className="text-center">
                 <MapPin className="mx-auto mb-4 text-accent" size={48} />
-                <h3 className="text-xl font-semibold mb-2">Standort Groß-Zimmern</h3>
+                <h3 className="text-xl font-semibold mb-2">{t.contact.map}</h3>
                 <p className="text-muted-foreground">Bertha-von-Suttner-Str. 5, 64846 Groß-Zimmern</p>
               </div>
             </div>
